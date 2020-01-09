@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ecemple Popup</title>
+</head>
+
+<style>
+
+.button{
+    background: grey;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5%;
+    box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    text-align: center;
+    }
+
+.button:hover {
+    background:red;
+    color: white;
+    }
+
+.popup {
+    background: rgba(0,0,0,0.4); /*ça correspond au fond gris clair de la full page quand popup actif*/
+    width:100%;
+    height:100%;
+    position:absolute;
+    top: 0;
+    display: none; /*cette variable est importante soit "flex" soit "none" cf JS a la fin */
+    justify-content:center;
+    align-items:center;
+    text-align : center;
+    }
+
+.popup-content {
+    width:50%;
+    height:30%;
+    position:relative;
+    background:white;
+    padding: 10px;
+    border-radius:5px;
+    }
+
+.close {
+    position:absolute; /*ce point close correspond à l'image de la croix pour fermer le popup*/
+    top: -15px;
+    right: -15px;
+    background: white;
+    border-radius: 50%;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+    }
+
+</style>
+
+
+<body>
+
+    <div class="container">
+        <a href="#" class="button" id="button"> On reste en contact </a>
+    </div>
+    <div class="popup">
+        <div class="popup-content">
+            <img src="images/close.png" alt="close" class="close">
+            <p>
+                Voici mes coordonnées 
+                <br />💬
+                <br />
+                <br />07.68.10.42.63
+                <br />hdelaporte@gmail.com
+                <br />
+                <br />😇
+            </p>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("button").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "flex";
+        })
+
+        document.querySelector(".close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        })
+
+    </script>
+
+
+</body>
+
+</html>
